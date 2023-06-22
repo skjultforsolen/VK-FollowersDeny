@@ -1,0 +1,24 @@
+{
+    "name": "VK FollowersDeny",
+    "author": "skjultforsolen",
+    "description": "Deny all friends requests",
+    "content_scripts": [
+        {
+          "matches": [
+            "https://vk.com/friends?section=requests>"
+          ],
+          "js": ["deny.js"]
+        }
+      ],
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {},
+    "action": {
+        "default_popup":"popup.html"
+    },
+    "permissions": ["scripting", "activeTab", "storage"],
+    "background": {
+        "service_worker": "background.js"
+      }
+      
+}
